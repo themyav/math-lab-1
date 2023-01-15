@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+}
+body {
+    font-family: "Nunito", sans-serif;
+    color: #333;
+    font-weight: 300;
+    line-height: 1.6;
+    font-size: 15px;
+    margin: 10px;
+}
+
+p{
+    font-size: 15px;
+}
+
+aside{
+    float: left;
+    max-width: 350px;
+}
+
+canvas{
+    margin: 0;
+    max-width: 500px;
+}
+
+#result_aside{
+    float: right;
+    align-self: auto;
+    font-size: 12px;
+}
+
+#explanation, #results{
+    border-collapse: collapse;
+    /*убираем пустые промежутки между ячейками*/
+    border: 1px solid grey;
+    /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+}
+
+#explanation td, #results td{
+    border: 1px solid grey;
+}
+

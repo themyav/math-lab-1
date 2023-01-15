@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторная работа №1</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/equationProcessor.js"></script>
+  <script src="js/areaProcessor.js"></script>
+  <script src="js/integralProcessor.js"></script>
+  <script src="js/queue.js"></script>
+</head>
+<body>
+<h3>Лабораторная работа №1</h3>
+<div class="container">
+  <aside id="equation">
+    <table id="eqTable">
+      <tr>
+        <td>
+          <label for="eq1">Уравнение 1:</label>
+          <select id="eqType1">
+            <option value="y=">y =</option>
+            <option value="x=">x =</option>
+          </select>
+          <input type="text" id="eq1" value="x*2"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="eq2">Уравнение 2:</label>
+          <select id="eqType2">
+            <option value="y=">y =</option>
+            <option value="x=">x =</option>
+          </select>
+          <input type="text" id="eq2" value="7"/>
+        </td>
+      </tr>
+    </table>
+
+    <label for="mu">Выберите мелкость разбиения от 0.5 до 5</label>
+    <input type="range" id="mu" min="0.5" max="5" step="0.5" value="1.5">
+    <p id="mu_val">Текущее значение: 1.5</p>
+
+    <button id="add" onclick="addEquationField()">Добавить уравнение</button><br>
+
+    <p>Нажмите "выбрать области" после того, как введете уравнения.</p>
+    <button value="Выбрать области" onclick="chooseArea()">Выбрать области</button><br>
+
+    <p>Нажмите "интегрировать" после того, как выберете все области</p>
+    <button id="start" onclick="integrate()" disabled>Интегрировать</button><br>
+
+    <button id="back" onclick="goBack()" disabled>Назад</button><br>
+  </aside>
+  <aside id="result_aside">
+    <span>Используйте синтаксис JavaScript для ввода уравнений</span>
+    <table id="explanation">
+      <tr>
+      <tr>
+        <td>Сложение х и 2</td>
+        <td>2 + x</td>
+      </tr>
+        <td>Умножение х на 2</td>
+        <td>2*x</td>
+      </tr>
+      <tr>
+        <td>Деление х на 2</td>
+        <td>2/x</td>
+      </tr>
+      <tr>
+        <td>Возведение в степень 2</td>
+        <td>Math.pow(x, 2)</td>
+      </tr>
+      <tr>
+        <td>Синус x</td>
+        <td>Math.sin(x)</td>
+      </tr>
+      <tr>
+        <td>Косинус x</td>
+        <td>Math.cos(x)</td>
+      </tr>
+      <tr>
+        <td>e в степени x</td>
+        <td>Math.exp(x)</td>
+      </tr>
+      <tr>
+        <td>Число PI</td>
+        <td>Math.PI</td>
+      </tr>
+    </table>
+    <p>Результаты вычислений</p>
+    <table id="results">
+      <tr>
+        <th>Величина</th>
+        <th>Результат</th>
+      </tr>
+    </table>
+  </aside>
+  <div>
+    <canvas id="graph" height="300" width="300"></canvas>
+    <script src="js/drawer.js"></script>
+  </div>
+
+</div>
+
+</body>
+</html>
