@@ -10,11 +10,16 @@ body {
     font-weight: 300;
     line-height: 1.6;
     font-size: 15px;
-    margin: 10px;
+    margin-left: 15%;
+    max-width: 1000px;
 }
 
 p{
-    font-size: 15px;
+    font-size: 12px;
+}
+
+input, select, table{
+    border-radius: 4px;
 }
 
 aside{
@@ -23,24 +28,51 @@ aside{
 }
 
 canvas{
-    margin: 0;
     max-width: 500px;
 }
 
+#graphdiv{
+    margin: auto;
+}
+
 #result_aside{
+    text-align: center;
     float: right;
-    align-self: auto;
     font-size: 12px;
+    margin: auto;
+}
+
+table{
+    background-color: lightblue;
+    border-radius: 4px;
 }
 
 #explanation, #results{
     border-collapse: collapse;
     /*убираем пустые промежутки между ячейками*/
     border: 1px solid grey;
+    border-radius: 4px;
     /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
 }
 
 #explanation td, #results td{
     border: 1px solid grey;
+    border-radius: 4px;
+}
+
+label[for="mu"]{
+    font-size: 12px;
+}
+
+button{
+    border-radius: 4px;
+    background-color: lightblue;
+    border-color: dodgerblue;
+    font-weight: bold;
+}
+
+button:hover:enabled{
+    background-color: pink;
+    border-color: palevioletred;
 }
 

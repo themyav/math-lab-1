@@ -18,23 +18,14 @@ function addEquationField(){
     eqCnt++;
     let n = eqCnt.toString();
     $('#eqTable tr:last').after('<tr><td>' +
-        '<label for="eq'+ n + '">Уравнение ' + n + ':</label>' +
+        '<label for="eq'+ n + '">Уравнение ' + n + ': </label>' +
         '<select id="eqType' + n + '">\n' +
         '            <option value="y=">y =</option>\n' +
         '            <option value="x=">x =</option>\n' +
-        '          </select>'+
-        '<input type="text" id="eq' + n + '"/>' +
+        '          </select> '+
+        ' <input type="text" id="eq' + n + '"/>' +
     '</td></tr>');
     functions.push(0);
-}
-
-function goBack(){
-    if(areaChoosing){
-        areaChoosing = false;
-        equationChoosing = true;
-        //ctx.restore();
-        console.log("restoring");
-    }
 }
 
 
@@ -46,6 +37,25 @@ function parseAllFunctions(){
         functions[i] = document.getElementById("eq" + (i + 1).toString()).value;
         curF = functions[i];
         if(curF) drawFunction(yF);
+    }
+}
+
+function goBack(){
+    if(areaChoosing){
+        drawGraphic();
+        areaChoosing = false;
+        equationChoosing = true;
+        document.getElementById("start").disabled = true;
+        document.getElementById("back").disabled = true;
+        changeEquationStatus(false);
+    }
+    else if(integration){
+        drawGraphic();
+        document.getElementById("choose").disabled = false;
+        integration = false;
+        integral = 0;
+        accuracy = 0;
+        chooseArea();
     }
 }
 

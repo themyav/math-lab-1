@@ -45,6 +45,7 @@ function colorZone(x, y){
                     d.data[1] = 90;
                     d.data[2] = 205;
                     ctx.putImageData(d, next_x, next_y);
+                    realS++;
                 }
             }
         }
@@ -54,7 +55,7 @@ function colorZone(x, y){
 }
 
 function chooseArea(){
-    console.log("saved");
+    if(areaChoosing) return;
     areaChoosing = true;
     equationChoosing = false;
     document.getElementById("start").disabled = false;

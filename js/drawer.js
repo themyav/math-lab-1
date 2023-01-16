@@ -130,11 +130,11 @@ function drawRect(x, y, w, h){
 }
 
 function drawAxes(){
-    ctx.strokeStyle = 'darkgray';
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
     drawLine(zeroX, shift, zeroX, canvas.height - shift)
     drawLine(shift, zeroY, canvas.width-shift, zeroY)
 
-    ctx.fillStyle = 'red';
+    ctx.fillStyle = 'black';
     for(let i = shift; i <= canvas.width-shift; i+=k){
         drawPoint(i, zeroY);
     }
@@ -142,7 +142,6 @@ function drawAxes(){
         drawPoint(zeroX, j)
     }
 
-    ctx.fillStyle = 'red'; //потом убрать
     drawPoint(zeroX,zeroY);
 }
 
